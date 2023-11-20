@@ -17,6 +17,17 @@ namespace DesafioFundamentos.Models
             // TODO: Pedir para o usuário digitar uma placa (ReadLine) e adicionar na lista "veiculos"
             // *IMPLEMENTE AQUI*
             Console.WriteLine("Digite a placa do veículo para estacionar:");
+            string placa = Console.ReadLine();
+            if (veiculos.Contains(placa))
+            {
+                Console.WriteLine("Esse veículo já encontra-se estacionado!");
+                AdicionarVeiculo();
+            }
+            else
+            {
+                veiculos.Add(placa);
+                Console.WriteLine("Veículo estacionado!");
+            }
         }
 
         public void RemoverVeiculo()
@@ -36,7 +47,7 @@ namespace DesafioFundamentos.Models
                 // TODO: Realizar o seguinte cálculo: "precoInicial + precoPorHora * horas" para a variável valorTotal                
                 // *IMPLEMENTE AQUI*
                 int horas = 0;
-                decimal valorTotal = 0; 
+                decimal valorTotal = 0;
 
                 // TODO: Remover a placa digitada da lista de veículos
                 // *IMPLEMENTE AQUI*
@@ -45,7 +56,8 @@ namespace DesafioFundamentos.Models
             }
             else
             {
-                Console.WriteLine("Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente");
+                Console.WriteLine(
+                    "Desculpe, esse veículo não está estacionado aqui. Confira se digitou a placa corretamente");
             }
         }
 
